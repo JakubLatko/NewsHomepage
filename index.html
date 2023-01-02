@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <title>News homepage   </title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script  src="app.js" defer></script>
+</head>
+<body>
+  <div class="container">
+    <nav class="primaryNavigation">
+      <a class="logo" href="#" ><img class="logoImage" src="assets/images/logo.svg "></a>
+      <ul aria-expanded="false" class="navigationList closed">
+        <a href="#" class="navigationListItem"><li>Home</li></a>
+        <a href="#" class="navigationListItem"><li>New</li></a>
+        <a href="#" class="navigationListItem"><li>Popular</li></a>
+        <a href="#" class="navigationListItem"><li>Trending</li></a>
+        <a href="#" class="navigationListItem"><li>Categories</li> </a>
+      </ul>
+      <div id="burgerMenu" aria-controls="primaryNavigation">
+        <img id="openIcon"src="assets/images/icon-menu.svg">
+        <!-- <img id="closeIcon" src="assets/images/icon-menu-close.svg"> -->
+      </div>
+      
+    </nav>
+    <div  class="gridWrapper">
+      <section class="mainArticle">
+        <img class="web3Desktop" src="assets/images/image-web-3-desktop.jpg">
+        <img class="web3Mobile "src="assets/images/image-web-3-mobile.jpg">
+        <div class="mainArticleWrapper">
+          <div class="mainArticleTitle">
+            <h1 >The Bright Future of Web 3.0?</h1>
+          </div>
+          <div class="mainArticleContent">
+            <p class="mainArticleText">We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+            But is it really fulfilling its promise?</p>
+            <a href="#" class="mainArticleButtonLink"><button class="mainArticleButton">Read more</button></a>
+        </div>
+  
+      </section>
+      <section class="rightMenu">
+
+        <h2 class="menuTitle">New </h2>
+        <div class="sideArticle">
+          
+          <a href="#"><h3 class="sideArticleTitle"> Hydrogen VS Electric Cars</h3></a>
+          <p class="sideArticleText">Will hydrogen-fueled cars ever catch up to EVs?</p>
+        </div>
+       
+        <div class="sideArticle">
+          <a href="#"><h3 class="sideArticleTitle" > The Downsides of AI Artistry </h3></a>
+          <p class="sideArticleText">What are the possible adverse effects of on-demand AI image generation?</p>
+        </div>
+      
+        <div class="sideArticle">
+          <a href="#"><h3 class="sideArticleTitle">Is VC Funding Drying Up?</h3></a>
+          <p class="sideArticleText">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+        </div>
+      </section>
+      <secion class="minorArticleWrapper">
+        <div class="minorArticle">
+          <img src="assets/images/image-retro-pcs.jpg">
+          <div class="minorArticleInnerWrapper">
+            <h2 class="minorArticleNumber">01</h2> 
+            <a href="#" class="minorArticleTitle"><h3 >Reviving Retro PCs</h3></a>
+            <p class="minorArticleText">What happens when old PCs are given modern upgrades?</p>
+        </div>
+        </div>
+        <div class="minorArticle">
+          <img src="assets/images/image-top-laptops.jpg">
+          <div class="minorArticleInnerWrapper">
+            <h2 class="minorArticleNumber">02</h2>
+            <a href="#" class="minorArticleTitle"><h3 >Top 10 Laptops of 2022</h3></a>
+            <p class="minorArticleText">Our best picks for various needs and budgets.</p>
+          </div>
+        </div>
+        <div class="minorArticle">
+          <img src="assets/images/image-gaming-growth.jpg">
+          <div class="minorArticleInnerWrapper">
+            <h2 class="minorArticleNumber">03</h2>
+            <a href="#" class="minorArticleTitle"><h3 >The Growth of Gaming</h3></a>
+            <p class="minorArticleText">How the pandemic has sparked fresh opportunities.</p>
+          </div>
+        </div>
+      </secion>
+
+  
+
+  
+      
+  <!-- <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div> -->
+    </div>
+  </div>
+</body>
+</html>

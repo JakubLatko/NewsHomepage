@@ -1,0 +1,458 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+   scroll-behavior: auto;
+  }
+  
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+a{
+  text-decoration: none;
+}
+///////////////////////////////////////////////////////////////////
+    
+$primary: hsl(35, 77%, 62%);
+$secondary:hsl(5, 85%, 63%);
+$accent: hsl(240, 100%, 5%);
+$background:hsl(36, 100%, 99%);
+$font-primary:hsl(233, 8%, 79%);
+$font-secondary: hsl(236, 13%, 42%);
+
+$font-family:'Inter', sans-serif;
+
+
+//////////////////////////////////////////////////////////////////////////////
+
+body{
+    background-color: $background;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 16px;
+    font-family: $font-family;
+    overflow-x: hidden;
+}
+
+
+.container{
+    width: clamp(70vw ,1440px, 95vw);
+    background-color: $background;
+    height:fit-content;
+    //outline: 1px solid limegreen;
+}
+
+
+.primaryNavigation{
+  //outline: 1px solid limegreen;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  padding:3% 0% ;
+}
+#burgerMenu{
+  display: none;
+}
+.logo{
+  flex-grow: 1;
+  max-width: 70%;
+
+}
+.navigationList{
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  align-self: flex-end;
+  text-decoration:none;
+
+  text-align: right;
+  align-items: flex-end;
+  justify-content: space-around;
+}
+.navigationList::after{
+  content: ' ';
+  display: none;
+}
+
+.navigationListItem{
+  color: $font-secondary;
+  padding-inline: 2rem ;
+  cursor: pointer;
+}
+
+.navigationListItem:hover,
+.navigationListItem:focus{
+  color: $secondary;
+}
+
+.gridWrapper{
+    max-height: 100vh;
+    display: grid; 
+     grid-template-columns: 1fr 1fr 1fr; 
+     grid-template-rows: 1.2fr 1.2fr 0.8fr; 
+    gap: 50px 3%; 
+     grid-template-areas: 
+    "mainArticle mainArticle rightMenu"
+    "mainArticle mainArticle rightMenu"
+    "minorArticleWrapper minorArticleWrapper minorArticleWrapper"; 
+}
+
+
+.web3Desktop{
+  display: block;
+}
+.web3Mobile{
+  display: none;
+}
+.mainArticle{
+    
+   padding-top:2vh ;
+    grid-area: mainArticle;
+    //outline: 1px solid limegreen;
+    display: flex;
+    flex-direction:column;
+    height: min-content;
+}
+
+.mainArticleWrapper{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.mainArticleTitle{
+  
+  flex-grow: 1;
+  font-weight: 800;
+  font-size: clamp(1rem,2.2rem, 3rem);
+  color: $accent;
+  min-width: 45%;
+}
+
+.mainArticleContent{
+  padding-inline:1rem ;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+
+}
+
+.mainArticleText{
+  font-size: 1.2rem;
+  text-align: start;
+}
+
+.mainArticleButton{
+  background-color:$secondary ;
+  border: none;
+  color: $background;
+  padding: 1em 2em;
+  width: fit-content;
+  font-size:1.2rem ;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+}
+.mainArticleButton:hover,
+.mainArticleButton:focus{
+  cursor: pointer;
+  background-color: $accent;
+  transition: ease-in-out 400ms;
+}
+
+.rightMenu{
+    background-color: $accent;
+    //height: min-content;
+    grid-area: rightMenu;
+   // outline: 1px solid limegreen;
+    display: flex;
+    flex-direction: column;
+    padding: 5% 5%;
+}
+
+.menuTitle{
+  color:$primary;
+  font-size: 3rem;
+}
+
+.sideArticle{
+  display: flex;
+  flex-direction: column;
+  padding: 5% 0%;
+  border-bottom: 1px $font-secondary solid;
+  flex-grow: 1;
+}
+
+.sideArticleTitle{
+  color: $background;
+  font-size: 1.5rem;
+}
+.sideArticleTitle:hover,
+.sideArticleTitle:focus{
+  color: $primary;
+  cursor: pointer;
+}
+
+.sideArticleText{
+  color: $font-primary;
+  font-size: 1.2rem;
+}
+
+.sideArticle:last-of-type{
+  border: none;
+}
+.minorArticleWrapper{
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  grid-area: minorArticleWrapper;
+  //outline: 1px solid limegreen;
+  height: 15vh;
+}
+
+
+
+.minorArticle{
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  margin-left: 3%;
+}
+.minorArticle:first-of-type{
+  margin: 0;
+}
+
+
+.minorArticleInnerWrapper{
+  display: flex;
+  flex-direction: column;
+  padding: 0 5%;
+}
+
+
+
+.minorArticleNumber{
+font-size: 2rem;
+color:$font-primary;
+font-weight: 700;
+}
+
+.minorArticleTitle{
+  color: $accent;
+  font-weight: 800;
+  margin-block: auto;
+  font-size: clamp(1rem, 1rem ,1.5rem);
+}
+.minorArticleTitle:hover,
+.minorArticleTitle:focus{
+  color: $secondary;
+}
+.minorArticleText{
+margin-top: auto;
+  font-size: clamp(0.5rem,1rem,1.2rem);
+  overflow: hidden;
+
+}
+
+
+
+@media only screen and (max-width: 800px){
+  .container{
+    width: 100vw;
+    height: fit-content;
+    padding: 5vw;
+  }
+  .primaryNavigation{
+    padding-block: 1vh;
+  }
+  #burgerMenu{
+    opacity: 1;
+    display: block;
+    align-self: center;
+    cursor: pointer;
+    //outline: 1px solid limegreen;
+    
+  }
+  .logo{
+    flex-grow: 0;
+  }
+  .navigationList{
+    z-index: 10;
+    top: 0;
+    
+    background-color: white;
+    width: 70vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    padding: 0;
+    margin: 0;
+    justify-content: center;
+    align-items: flex-start;
+    padding-bottom:20vh ;
+    transition: 500ms ease-in-out;
+    transform-origin: right;
+    position: fixed;
+  }
+  .navigationList::after{
+    content: '';
+    width: 100px;
+    height:100px;
+    top:0;
+    left: 0;
+    background-color: rgba(0 0 0 0.5);
+    z-index: 10;
+    display: block;
+    position: absolute;
+  }
+  .opened{
+    right: 0%;
+    
+
+  }
+
+  .closed{
+    right:-100%;
+    display: none;
+  }
+  
+  #openIcon{
+    position: relative;
+    z-index: 20;
+    display: block;
+    top: 3%;
+    right: 5%;
+    z-index: 20;
+    width: 5vh;
+  }
+  .navigationListItem{
+    text-align: left;
+    padding-block: 2vh;
+    font-weight: 700;
+  }
+  .gridWrapper{
+    display: flex;
+    flex-direction: column;
+  }
+
+  
+  .web3Desktop{
+    display: none;
+  }
+  .web3Mobile{
+    display: block;
+  }
+  .mainArticleWrapper{
+    flex-direction: column;
+  }
+  .mainArticleContent{
+    flex-direction: column;
+    padding-block: 2% ;
+    text-align: left;
+    padding-inline:0;
+  }
+  .mainArticleTitle{
+    font-size: clamp(1.5rem,6vw, 5rem);
+    font-weight: 800;
+    max-width: 70%;
+    padding-block:5% ;
+  }
+  .mainArticleText{
+    font-size:clamp(1rem, 3vw, 2rem);
+  }
+  .mainArticleButtonLink{
+    padding-block:10% ;
+  }
+  .mainArticleButton{
+    padding-block: 5%;
+  }
+
+
+
+  .minorArticleWrapper{
+    flex-direction: column;
+    width: 100%;
+    height: fit-content;
+  }
+  .minorArticle{
+    padding-block: 5%;
+    padding-inline: 0;
+    margin: 0;
+  }
+  .minorArticle img{
+    max-width:30% ;
+  }
+  .minorArticleTitle{
+    font-size: clamp(0.7rem, 5vw, 2rem);
+  }
+  .minorArticleText{
+    font-size: clamp(1rem, 3vw, 2rem);
+  }
+}
